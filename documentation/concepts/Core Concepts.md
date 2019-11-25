@@ -1,14 +1,3 @@
-
-
-공식문서 번역  ( https://webpack.js.org/ ) 
-=========================================
-
-
-
-
-
-
-
 Concepts  ( https://webpack.js.org/concepts/ )
 ---------
 
