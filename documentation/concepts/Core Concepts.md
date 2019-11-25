@@ -30,7 +30,7 @@ Webpack 4.0
 
 *   <div>4.0.0 버전부터 웹팩은 configuration file을 필요로 하지 않지만 더 나은 요구를 충족하기 위해서는 config설정이 필요하다.</div>
 
-<div>To get started you only need to understand its Core Concepts: </div>
+<div>To get started you only need to understand its Core Concepts: (아래 [SUB]Concept참조 )</div>
 
 
 *   <div>Entry</div>
