@@ -8,7 +8,7 @@
 
 ## 목차
 
-1. [Concepts](https://github.com/judaihyun/webpack-study/blob/master/documentation/concepts/Core%20Concepts.md)         ( https://webpack.js.org/concepts/ ) 
+1. [Concepts](https://github.com/judaihyun/webpack-study/blob/master/documentation/concepts/Core%20Concepts.md)                  원본 ( https://webpack.js.org/concepts/ ) 
 
 
 
