@@ -70,9 +70,9 @@ Webpack 4.0
 
 <div>entry point는 internal dependency graph의 구축을 시작하기 위해 어떤 모듈 웹팩을 사용해야 하는지 나타낸다. 웹팩은 entry point가 어떤 다른 모듈과 라이브러리에 의존하는지를 파악한다.(직간접적으로)</div>
 
-<div>기본 entry point 값은 <span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">./src/index.js</span> 이지만 아래와 같이 다른 경로 (or multiple entry points)를 지정할 수 있다.</div>
+기본 entry point 값은 *./src/index.js* 이지만 아래와 같이 다른 경로 (or multiple entry points)를 지정할 수 있다.
 
-<div>![](https://github.com/judaihyun/webpack-study/blob/master/documentation/concepts/%5BSUB%5DCore%20Concepts_files/Image.png)</div>
+![image](https://github.com/judaihyun/webpack-study/blob/master/documentation/concepts/%5BSUB%5DCore%20Concepts_files/Image.png)
 
 <div><span style="font-size: 12pt; font-weight: bold;">Output</span></div>
 
