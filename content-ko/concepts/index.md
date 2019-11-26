@@ -41,7 +41,7 @@ module bundlers에 대한 숨겨진 아이디어와 어떻게 동작하는 지�
 *  Detailed Explanation of a Simple Module Bundler
 <br><br><br><br><br>
 
-# [SUB]Core Concepts
+
 
 
 ## Entry
