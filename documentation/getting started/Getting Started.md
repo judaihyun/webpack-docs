@@ -1,170 +1,112 @@
+# Getting Started
 
-Concepts  ( https://webpack.js.org/concepts/ )
----------
+webpack 은 컴파일하는데 javascript 모듈을 사용한다. 일단 설치([installed](https://webpack.js.org/guides/installation))하면, [CLI](https://webpack.js.org/api/cli)  나  [API](https://webpack.js.org/api/node) 를 마주하게 된다. 만약 웹팩이 처음이라면 [core concepts](https://github.com/judaihyun/webpack-study/blob/master/documentation/concepts/Core%20Concepts.md) 을 읽어보라.
+ 그리고 [this comparison](https://webpack.js.org/comparison)에서 왜 많은 커뮤니티에서 이 툴을 사용하는지 알게 될 것이다.
 
-
-
-
-# Core Concepts
-
-
-##### Concepts
-
-
-
-웹팩의 핵심은 Modern Javascript Application을 위한 정적 모듈 번들러다. 웹팩이 application을 처리할때, 프로젝트가 필요로 하는 모든 모듈을 매핑하고 하나 이상의 bundles를 생성하는 [dependency graph](https://webpack.js.org/concepts/dependency-graph/)를 내부적으로 구축한다.
-
-*   4.0.0 버전부터 웹팩은 configuration file을 필요로 하지 않지만 더 나은 요구를 충족하기 위해서는 config설정이 필요하다.
-
-To get started you only need to understand its Core Concepts: (아래 [SUB]Concept참조 )
-
-*   Entry
-
-*   Output
-
-*   Loaders
-
-*   Plugins
-
-*   Mode
-
-*   Browser Compatibility
-
-이 문서는 이러한 개념에 대한 높은 수준의 개요를 제공하는 동시에 상세한 개념별 사용 사례에 대한 링크를 제공하기 위한 것이다.
-
-module bundlers에 대한 숨겨진 아이디어와 어떻게 동작하는 지에 대하여 이해하고자 하면 다음 리소스를 참고.
-
-*  Manually Bundling an Application
-
-*  Live Coding a Simple Module Bundler
-
-*  Detailed Explanation of a Simple Module Bundler
-<br><br><br>
-
-# [SUB]Core Concepts
-
-
-## Entry
-
-entry point는 internal dependency graph의 구축을 시작하기 위해 어떤 모듈 웹팩을 사용해야 하는지 나타낸다. 웹팩은 entry point가 어떤 다른 모듈과 라이브러리에 의존하는지를 파악한다.(직간접적으로)
-
-기본 entry point 값은 `./src/index.js` 이지만  webpack config의 [entry 프로퍼티](https://webpack.js.org/configuration/entry-context/#entry)에 다른 경로 (or multiple entry points)를 지정할 수 있다.
-
-```javascript
-module.exports = {
-    entry : './path/to/my/entry/file.js'
-    };
-```
-
-
-<br><br><br>
-
-## Output
-
-output 프로퍼티는 웹팩이 어디에 bundles을 생성할지, 어떤 name으로 생성할 지에 대한 프로퍼티이다. 
-(기본값 주 출력 파일은 `./dist/main.js` 이고 다른 파일들의 경우 `./dist` 폴더로 설정되어 있다.)
-
-```javascript
-    const path = require('path');
-    module.exports = {
-	    entry: './path/to/my/entry/file.js',
-	    output: {
-		    path: path.resolve(__dirname, 'dist'),
-		    filename: 'my-first-webpack.bundle.js'
-		}
-	};
-```
-
-위의 예에서 output.path와 output.filename에서 출력을 설정한다. 코드의 위쪽에 있는 const path는 파일 경로를 조작하는 데 사용되는 core node.js 모듈이다.
-
-[output 속성은 더 많은 [설정](https://webpack.js.org/configuration/output/)을 할 수 있으며 자세한 것은 해당 [section](https://webpack.js.org/concepts/output/)을 참조.]
-
-
-<br><br><br>
-
-## Loaders
-
-[추가설명]ES5 <> ES6,  react의 JSX, SASS등의 변환을 수행.<br><br>
-
-
-웹팩은 JS와 JSON 파일만을 이해합니다. 로더는 웹팩이 다른 type의 파일을 처리하고 당신의 application에서 소비되는 valid한 모듈로 변환할 수 있도록 하여 dependency graph에 추가할 수 있도록 합니다.
-
-높은 수준에서 로더는 webpack config에서 두 가지 프로퍼티를 가지고 있습니다.
- 1. test 프로퍼티는 어떤 파일이 변환(transform)되어야 하는지를 나타낸다.
- 2. use 프로퍼티는 어떤 loader가 변환에 사용되어 질 것인지를 나타낸다.
-
-```javascript
-const path = require('path');
-    module.exports = {
-	    output: {
-		    filename: 'my-first-webpack.bundle.js'
-	    },
-	    module: {
-		    rules: [
-			    { test: \/.txt$/, use: 'raw-loader' }
-			]
-		}
-	};
-```   
-
-위의 설정에서는 단일 모듈에 대한 두 가지(test,use) rules 속성이 정의되어 있다. 이것은 웹팩 컴파일러에게 다음의 것들을 알려준다.
-
-> *.txt파일 중 require() 또는 import 문을 만나면 bundles에 추가하기 전에 raw-loader를 사용하여 변환해, 라는 명령을 내리는 것이다.
-
-
-<br><br><br>
-
-## Plugins
-
-로더는 특정한 종류의 모듈을 변환하기 위하여 사용되는 반면, plugins은 bundle 최적화, asset management, 환경 변수 주입과 같은 광범위한 작업을 수행할 수 있다.
-
-plugins을 사용하기 위해서는 `require()`를 사용하여 plugin array에 추가해야한다. config에서 플러그인을 여러번 사용할 수 있고 new 연산자와 함께 호출하여 인스턴스를 생성해야 한다.
-
-```javascript
-const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
-const webpack = require('webpack'); //to access built-in plugins
-
-module.exports = {
-  module: {
-    rules: [
-      { test: /\.txt$/, use: 'raw-loader' }
-    ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({template: './src/index.html'})
-  ]
-};
-```
-
-위의 예는 html-webpack-plugin이라는 플러그인이 생성된 모든 bundles을 자동적으로 HTML파일에 주입하여 생성하는 것이다. 
-
-> 이 밖에도 많은 플러그인들이 존재한다.  자세한 것은 [링크](https://webpack.js.org/plugins/) 참조
+> Webpack은 v5.0.0-beta.1 이므로 webpack을 실행할 최소 node.js 버전은 10.13.0(LTS)
 
 <br>
-[추가설명] 플러그인을 사용하는 것은 간단하지만 많은 플러그인들이 존재함과 많은 use case들이 존재하기 때문에 아래에 plugins을 자세하게 설명한다.
-<br><br><br>
 
+## Basic Setup
 
-## Mode
+연습할 디렉터리를 생성한 후 npm을 초기화 한다. [install webpack locally](https://webpack.js.org/guides/installation/#local-installation), 그리고 webpack-cli (the tool used to run webpack on the command line) 을 설치한다 :
 
-mode parameter를 development, production, none으로 설정하면 각 환경에 해당하는 최적화를 수행할 수 있다. (기본값은 `production`)
-
-```javascript
-module.exports = {
-  mode: 'production'
-};
+```bash
+mkdir webpack-demo
+cd webpack-demo
+npm init -y
+npm install webpack webpack-cli --save-dev
 ```
 
-[대충 파악하기로는...  development는 bundles.js소스보기 시 이쁘게 나오고 production은 난독화,minify해서 나옴]
+그리고 다음과 같이 디렉터리 구조, 파일, 파일 내용을 작성하라.
 
-<br><br><br>
-## HeadingBrowser Compatibility
+**project**
 
-웹팩은 ES5를 준수하는 모든 브라우저(IE8 and below 제외)에 대한 지원을 한다. 웹팩은 import() 와 require.ensure()를 위하여 promise가 필요하기 때문이다. 만약 이전 버전에 대한 브라우저 지원이 필요하면 load a polyfill을 사용해라.(홈페이지 참조)
+```diff
+  webpack-demo
+  |- package.json
++ |- index.html
++ |- /src
++   |- index.js
+```
+
+**src/index.js**
+
+```javascript
+function component() {
+  const element = document.createElement('div');
+
+  // Lodash, currently included via a script, is required for this line to work
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+
+  return element;
+}
+
+document.body.appendChild(component());
+```
+
+**index.html**
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started</title>
+    <script src="https://unpkg.com/lodash@4.16.6"></script>
+  </head>
+  <body>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
+```
+우리는 또한 우리의 패키지를 `private`하게 만들기 위하여 `package.json` 파일을 설정해야한다. 또 `main` entry를 삭제할 것이다. 이 것은 혹시라도 당신의 코드가 발행되는 것을 막기 위함이다.
+
+> If you want to learn more about the inner workings of  `package.json`, then we recommend reading the  [npm documentation](https://docs.npmjs.com/files/package.json).
+
+**package.json**
+
+```diff
+  {
+    "name": "webpack-demo",
+    "version": "1.0.0",
+    "description": "",
++   "private": true,
+-   "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "webpack": "^4.20.2",
+      "webpack-cli": "^3.1.2"
+    },
+    "dependencies": {}
+  }
+```
+
+이 예제에서는 암묵적인 의존성이 `<script>` 태그 사이에 존재한다. 우리의 `index.js` 파일이 실행되기 전에 `lodash`가 페이지에 포함되어 있는지 아닌지에 따라서 의존되어 있는 상태이다. 이 것은 `index.js`가 `lodash`를 명시적으로 선언한 적이 없기 때문이다. 단지, `_` 글로벌 변수가 존재한다고 가정할 뿐이다.
+
+<br>
+
+> [추가설명] `_` 는 `lodash`에서 사용되는 구문이다. `jquery`에서 해당 메서드를 사용할 때 `$`붙이는 것 처럼.
+
+<br> 
 
 
-<br><br>
+기존 웹팩을 사용하지 않고 Javascript 프로젝트를 관리할 때는 다음과 같은 문제가 있다.
 
-## Environment
+-   외부 라이브러리에 의존적인 스크립트는 즉시 반영이 되지 않는다.
+-   의존 모듈이 없거나, 또는 잘못된 순서로 include 되었을 때 어플리케이션은 제대로 기능하지 못한다.
+-   의존 모듈이 include되었지만 사용되지 않을 때도 브라우저는 불필요한 코드까지 다운로드한다.
+<br>
+대신! 웹팩으로 이러한 관리를 합시다
 
-웹팩은 Node.js 8.x 이상에서 동작한다.
+
+
+
+
+
+
+
