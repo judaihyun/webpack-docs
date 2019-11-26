@@ -1,12 +1,12 @@
 
 
-# 공식 문서 번역 작업 
+## Webpack 공식 문서 번역 작업 
 
 ( https://webpack.js.org/ )
 
 
 
-## 목차
+### 목차
 
 1. [Concepts](https://github.com/judaihyun/webpack-docs/blob/master/docs/concepts/Core-Concepts.md) ---------- 원문 ( https://webpack.js.org/concepts/ ) 
 
