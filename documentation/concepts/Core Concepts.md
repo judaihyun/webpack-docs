@@ -18,17 +18,17 @@ Concepts  ( https://webpack.js.org/concepts/ )
 
 To get started you only need to understand its Core Concepts: (아래 [SUB]Concept참조 )
 
-*   Entry
+*   [Entry](#Entry)
 
-*   Output
+*   [Output](#Output)
 
-*   Loaders
+*   [Loaders](#Loaders)
 
-*   Plugins
+*   [Plugins](#Plugins)
 
-*   Mode
+*   [Mode](#Mode)
 
-*   Browser Compatibility
+*   [Browser Compatibility](#Browser-Compatibility)
 
 이 문서는 이러한 개념에 대한 높은 수준의 개요를 제공하는 동시에 상세한 개념별 사용 사례에 대한 링크를 제공하기 위한 것이다.
 
@@ -39,7 +39,7 @@ module bundlers에 대한 숨겨진 아이디어와 어떻게 동작하는 지�
 *  Live Coding a Simple Module Bundler
 
 *  Detailed Explanation of a Simple Module Bundler
-<br><br><br>
+<br><br><br><br><br>
 
 # [SUB]Core Concepts
 
@@ -158,7 +158,7 @@ module.exports = {
 [대충 파악하기로는...  development는 bundles.js소스보기 시 이쁘게 나오고 production은 난독화,minify해서 나옴]
 
 <br><br><br>
-## HeadingBrowser Compatibility
+## Browser Compatibility
 
 웹팩은 ES5를 준수하는 모든 브라우저(IE8 and below 제외)에 대한 지원을 한다. 웹팩은 import() 와 require.ensure()를 위하여 promise가 필요하기 때문이다. 만약 이전 버전에 대한 브라우저 지원이 필요하면 load a polyfill을 사용해라.(홈페이지 참조)
 
