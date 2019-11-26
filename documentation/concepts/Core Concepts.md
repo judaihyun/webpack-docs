@@ -147,20 +147,24 @@ module.exports = {
 
 ## Mode
 
-<div>mode parameter를 development, production, none으로 설정하면 각 환경에 해당하는 최적화를 수행할 수 있다. 기본값은 <span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">production</span></div>
+mode parameter를 development, production, none으로 설정하면 각 환경에 해당하는 최적화를 수행할 수 있다. (기본값은 `production`)
 
-<div>![]([SUB]Core Concepts_files/Image [4].png)</div>
+```javascript
+module.exports = {
+  mode: 'production'
+};
+```
 
-<div>[대충 파악하기로는...  development는 bundles.js소스보기 시 이쁘게 나오고 production은 난독화,minify해서 나옴]</div>
+[대충 파악하기로는...  development는 bundles.js소스보기 시 이쁘게 나오고 production은 난독화,minify해서 나옴]
 
-<div><span style="font-weight: bold; font-size: 12pt;">Browser Compatibility</span></div>
+<br><br><br>
+## HeadingBrowser Compatibility
 
-<div>웹팩은 ES5를 준수하는 모든 브라우저(IE8 and below 제외)에 대한 지원을 한다. 웹팩은 import() 와 require.ensure()를 위하여 promise가 필요하기 때문이다. 만약 이전 버전에 대한 브라우저 지원이 필요하면 load a polyfill을 사용해라.(홈페이지 참조)</div>
-
-</div>
-
-</span></div>
-
-</a>
+웹팩은 ES5를 준수하는 모든 브라우저(IE8 and below 제외)에 대한 지원을 한다. 웹팩은 import() 와 require.ensure()를 위하여 promise가 필요하기 때문이다. 만약 이전 버전에 대한 브라우저 지원이 필요하면 load a polyfill을 사용해라.(홈페이지 참조)
 
 
+<br><br>
+
+## Environment
+
+웹팩은 Node.js 8.x 이상에서 동작한다.
