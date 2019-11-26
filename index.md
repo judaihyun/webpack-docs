@@ -10,5 +10,5 @@
 
 1. [Concepts](https://github.com/judaihyun/webpack-docs/tree/master/docs/concepts/Core-Concepts.md) ---------- 원문 ( https://webpack.js.org/concepts/ ) 
 
-2. [Getting Started](https://github.com/judaihyun/webpack-docs/tree/master/docs/concepts/getting-started/Getting-Started.md) ----------- 원문(https://webpack.js.org/guides/getting-started/#using-a-configuration)
+2. [Getting Started](https://github.com/judaihyun/webpack-docs/blob/master/docs/getting-started/Getting-Started.md) ----------- 원문(https://webpack.js.org/guides/getting-started/#using-a-configuration)
 
