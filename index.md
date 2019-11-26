@@ -8,7 +8,7 @@
 
 ## 목차
 
-1. [Concepts](https://github.com/judaihyun/webpack-docs.github.io/tree/master/docs/concepts/Core-Concepts.md) ---------- 원문 ( https://webpack.js.org/concepts/ ) 
+1. [Concepts](https://github.com/judaihyun/webpack-docs/tree/master/docs/concepts/Core-Concepts.md) ---------- 원문 ( https://webpack.js.org/concepts/ ) 
 
-2. [Getting Started](https://github.com/judaihyun/webpack-docs.github.io/tree/master/docs/concepts/getting%20started/Getting%20Started.md) ----------- 원문(https://webpack.js.org/guides/getting-started/#using-a-configuration)
+2. [Getting Started](https://github.com/judaihyun/webpack-docs/tree/master/docs/concepts/getting-started/Getting-Started.md) ----------- 원문(https://webpack.js.org/guides/getting-started/#using-a-configuration)
 
