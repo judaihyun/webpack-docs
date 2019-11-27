@@ -1,18 +1,15 @@
 
-Concepts  ( https://webpack.js.org/concepts/ )
----------
-
-
-
-
-# Core Concepts
-
-
-##### Concepts
-
-
+---
+title: Concepts
+sort: 1
+contributors:
+  - jDevH
+---
 
 웹팩의 핵심은 Modern Javascript Application을 위한 정적 모듈 번들러다. 웹팩이 application을 처리할때, 프로젝트가 필요로 하는 모든 모듈을 매핑하고 하나 이상의 bundles를 생성하는 [dependency graph](https://webpack.js.org/concepts/dependency-graph/)를 내부적으로 구축한다.
+
+T> Learn more about JavaScript modules and webpack modules [here](/concepts/modules).
+
 
 *   4.0.0 버전부터 웹팩은 configuration file을 필요로 하지 않지만 더 나은 요구를 충족하기 위해서는 config설정이 필요하다.
 
