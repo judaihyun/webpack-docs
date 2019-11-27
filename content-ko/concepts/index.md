@@ -6,6 +6,7 @@ contributors:
   - jDevH
 ---
 
+
 웹팩의 핵심은 Modern Javascript Application을 위한 정적 모듈 번들러입니다.. 웹팩이 application을 처리할때, 프로젝트가 필요로 하는 모든 모듈을 매핑하고 하나 이상의 bundles를 생성하는 [dependency graph](https://webpack.js.org/concepts/dependency-graph/)를 내부적으로 구축합니다.
 
 T> Javascript 모듈과 웹팩 모듈에 대해 더 배우고 싶다면 ... [here](/concepts/modules).
