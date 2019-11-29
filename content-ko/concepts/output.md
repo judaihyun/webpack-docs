@@ -29,7 +29,7 @@ module.exports = {
 
 ## Multiple Entry Points
 
-If your configuration creates more than a single "chunk" (as with multiple entry points or when using plugins like CommonsChunkPlugin), you should use [substitutions](/configuration/output#output-filename) to ensure that each file has a unique name.
+만약 설정이 싱글 chunk(mutiple entry point 또는 CommonChunkPlugins) 이상일 때 각 파일이 고유한 이름을 갖도록 설정해야 합니다.
 
 ```javascript
 module.exports = {
@@ -49,7 +49,7 @@ module.exports = {
 
 ## Advanced
 
-Here's a more complicated example of using a CDN and hashes for assets:
+아래는 assets에 대한 CDN을 이용하는 방법입니다.
 
 __config.js__
 
@@ -63,7 +63,7 @@ module.exports = {
 };
 ```
 
-In cases where the eventual `publicPath` of output files isn't known at compile time, it can be left blank and set dynamically at runtime via the `__webpack_public_path__` variable in the entry point file:
+컴파일 시간에 출력 파일의 `publicPath`를 알 수 없는 경우, `__webpack_public_path__`변수를 통하여 런타임에 동적으로 설정하게 할 수도 있습니다.
 
 ```javascript
 __webpack_public_path__ = myRuntimePublicPath;
