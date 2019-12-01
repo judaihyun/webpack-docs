@@ -1,3 +1,6 @@
+
 .hello{
+    background:url('./icon.png');
+    font-family:'MyFont';
     color:red;
 }

@@ -1,18 +1,20 @@
-import _ from 'lodash';
-import './style.css';
-import Icon from './icon.png';
 
-function component() {
+function component() 
+{
+
+  return import(/**/'lodash')
+  .then(({default: _ }) =>{
+
     const element = document.createElement('div');
-  
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
 
-    const myIcon = new Image();
-    myIcon.src = Icon;
-    element.appendChild(myIcon);
-    
     return element;
-  }
+  })
+  .catch(error => 'An error occured while loading the component');
+
+}
   
-  document.body.appendChild(component());
+
+  getComponent().then(component => {
+    document.body.appendChild(component);
+  })
