@@ -1,8 +1,11 @@
 
+# 번역 프로젝트
+1. webpack 
+2. chrome extension
 
-## Webpack 공식 문서 번역 작업 
 
-( https://webpack.js.org/ )
+
+### Webpack 공식 문서 번역 작업  ( https://webpack.js.org/ )
 
 
 
@@ -18,3 +21,5 @@
 2. [Getting Started](https://github.com/judaihyun/webpack-docs/blob/master/content-ko/guides/getting-started.md) ----------- 원문(https://webpack.js.org/guides/getting-started/#using-a-configuration)
 
 
+
+### 크롬 확장프로그램 ( [https://developer.chrome.com/extensions](https://developer.chrome.com/extensions) )
