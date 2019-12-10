@@ -21,5 +21,6 @@
 2. [Getting Started](https://github.com/judaihyun/webpack-docs/blob/master/content-ko/guides/getting-started.md) ----------- 원문(https://webpack.js.org/guides/getting-started/#using-a-configuration)
 
 
+--------------
 
 ### 크롬 확장프로그램 ( [https://developer.chrome.com/extensions](https://developer.chrome.com/extensions) )
