@@ -15,3 +15,4 @@
 
 2. [Getting Started](https://github.com/judaihyun/webpack-docs/blob/master/content-ko/guides/getting-started.md) ----------- 원문(https://webpack.js.org/guides/getting-started/#using-a-configuration)
 
+------ 위까지 직역이고, 이후부터는 의역하였습니다. -------------------------
